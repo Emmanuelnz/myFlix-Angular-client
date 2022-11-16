@@ -1,0 +1,27 @@
+$cardColor: #111213;
+$textColor: #fff;
+
+button {
+  color: $textColor;
+}
+
+.nav-bar {
+  background-color: #1b1f23;
+  border: 2px $cardColor solid;
+  padding: 5px;
+  display: flex;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.logoutBtn {
+  position: absolute;
+  right: 10px;
+}
+
+.homeIcon {
+  margin-top: -8px;
+  margin-right: 2px;
+}
