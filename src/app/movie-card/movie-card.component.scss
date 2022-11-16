@@ -1,0 +1,38 @@
+$cardColor: #111213;
+$textColor: #fff;
+
+.fav-icon {
+  float: right;
+  color: $textColor;
+}
+
+img {
+  max-height: 500px;
+  max-width: 400px;
+}
+
+button {
+  color: $textColor;
+}
+
+.movieCards {
+  display: flex;
+  margin-top: 30px;
+}
+
+mat-card {
+  background-color: $cardColor;
+  display: flex auto;
+}
+
+mat-card-title {
+  color: $textColor;
+  padding-top: 10px;
+}
+
+mat-card-subtitle {
+  color: $textColor;
+  padding-top: 5px;
+}
+
+
