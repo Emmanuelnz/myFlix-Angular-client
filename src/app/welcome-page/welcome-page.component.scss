@@ -1,0 +1,29 @@
+$cardColor: #111213;
+$textColor: #fff;
+
+.main-page {
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  font-size: xx-large;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 25px;
+  padding: 7px;
+}
+
+mat-card {
+  max-width: fit-content;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $cardColor;
+}
+
+mat-card-title {
+  padding-top: 10px;
+  font-size: xx-large;
+  color: $textColor;
+}
