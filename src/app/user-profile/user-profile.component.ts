@@ -36,13 +36,13 @@ export class UserProfileComponent implements OnInit {
 
   // Update user information/credentials 
   updateUserInfo(): void {
-    console.log(this.user);
-    this.fetchApiData.editUser(this.user).subscribe((result) => {
+    console.log(this.userData);
+    this.fetchApiData.editUser(this.userData).subscribe((result) => {
       console.log(result);
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000,
       });
-      // Redirects user back to login, helps in avoiding errors
+      // Redirects user back to login if username or password is changed, helps in avoiding errors
       if (this.userData.Username || this.userData.Password) {
         localStorage.clear();
         this.router.navigate(['welcome']);
