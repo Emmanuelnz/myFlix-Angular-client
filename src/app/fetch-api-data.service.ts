@@ -118,7 +118,7 @@ export class FetchApiDataService {
       catchError(this.handleError));
   }
 
-  // POST - Api call to edit users info
+  // PUT - Api call to edit users info
   editUser(updateDetails: any): Observable<any> {
     
     const user = localStorage.getItem('user');
