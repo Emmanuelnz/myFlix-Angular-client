@@ -4,12 +4,14 @@
     <mat-card-header>
       <mat-card-title>Profile</mat-card-title>
     </mat-card-header>
+
     <!-- user info -->
     <mat-card-content> 
       <b>Username:</b> {{ user.Username }} <br>
       <b>Email:</b> {{ user.Email }} <br> 
       <b>Birthday:</b> {{ user.Birthday | date}} <br>
     </mat-card-content>
+
     <!-- Edit profile -->
     <mat-card-content>
       <form>
@@ -18,7 +20,6 @@
           <input
             matInput
             [(ngModel)]="userData.Username"
-            
             type="text"
             name="Username"
             required
@@ -41,7 +42,6 @@
             matInput
             [(ngModel)]="userData.Email"
             type="email"
-            
             name="Email"
             required
           />
@@ -52,7 +52,6 @@
             matInput
             [(ngModel)]="userData.Birthday"
             type="date"
-           
             name="Birthday"
           />
         </mat-form-field>
@@ -75,5 +74,4 @@
       </button>
     </mat-card-actions>
   </mat-card>
-
 </div>
