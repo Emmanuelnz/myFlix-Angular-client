@@ -26,6 +26,8 @@ import { GenreComponent } from './genre/genre.component';
 import { DirectorsComponent } from './directors/directors.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -45,7 +47,9 @@ const appRoutes: Routes = [
     GenreComponent,
     DirectorsComponent,
     MovieSynopsisComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditProfileComponent,
+    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

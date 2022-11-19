@@ -1,14 +1,15 @@
 <div class="nav-bar">
-  <!-- Home -->
+  <button class="title" mat-button (click)="toHome()">myFlix</button>
+  <!-- Home  -->
   <button mat-button (click)="toHome()">
-    <mat-icon class="homeIcon">home</mat-icon>Home
+    <mat-icon class="icon">home</mat-icon> Movies
   </button>
   <!-- Profile -->
-  <button mat-button (click)="toProfile()">Profile</button>
+  <button mat-button (click)="toProfile()">
+    <mat-icon class="icon">perm_identity</mat-icon> Profile
+  </button>
   <!-- Logout -->
-  <div class="logoutBtn">
-    <button  mat-button (click)="logout()" class="logout-button">
-      <mat-icon>logout</mat-icon> Logout
-    </button>
-  </div>
+  <button mat-button (click)="logOut()" class="logoutBtn">
+    <mat-icon>logout</mat-icon> Logout
+  </button>
 </div>

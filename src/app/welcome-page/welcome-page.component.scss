@@ -1,7 +1,7 @@
 $cardColor: #111213;
 $textColor: #fff;
 
-.main-page {
+.welcome-page {
   text-align: center;
 }
 
@@ -10,7 +10,7 @@ button {
   font-size: xx-large;
   margin-top: 40px;
   margin-left: 20px;
-  margin-right: 25px;
+  margin-right: 20px;
   padding: 7px;
 }
 
@@ -24,6 +24,12 @@ mat-card {
 
 mat-card-title {
   padding-top: 10px;
+  padding-bottom: 15px;
   font-size: xx-large;
   color: $textColor;
+}
+
+mat-icon {
+  font-size: x-large;
+  padding-bottom: 2%;
 }

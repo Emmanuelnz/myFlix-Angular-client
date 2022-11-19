@@ -13,13 +13,26 @@ button {
   padding: 20px;
 }
 
+.mcards {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.movie-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 5px;
+}
+
 img {
-  min-height: 450px;
+ max-height: 400px;
+ min-height: auto;
 }
 
 mat-card {
   background-color: $cardColor;
-  min-height: 500px;
+  max-height: fit-content;
 }
 
 mat-card-title {

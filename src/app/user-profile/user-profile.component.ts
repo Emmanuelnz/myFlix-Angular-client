@@ -1,6 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,18 +13,15 @@ import { Router } from '@angular/router';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-
 export class UserProfileComponent implements OnInit {
-
   user: any = {};
-
-  @Input() userData: any = {};
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar,
-    public router: Router
-  ) { }
+    public dialog: MatDialog,
+    public router: Router,
+    public snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.getUserInfo();
@@ -34,37 +36,27 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  // Update user information/credentials 
-  updateUserInfo(): void {
-    console.log(this.userData);
-    this.fetchApiData.editUser(this.userData).subscribe((result) => {
-      console.log(result);
-      this.snackBar.open('Successfully updated profile!', 'OK', {
-        duration: 2000,
-      });
-      // Redirects user back to login if username or password is changed, helps in avoiding errors
-      if (this.userData.Username || this.userData.Password) {
-        localStorage.clear();
-        this.router.navigate(['welcome']);
-        this.snackBar.open('Please login again with your updated credentials', 'OK', { duration: 2000 });
-      }
+  // Open dialog to users profile information 
+  openEditProfileDialog(): void {
+    this.dialog.open(EditProfileComponent, {
+      width: '300px',
     });
   }
 
-  // Delete user account 
+  // deletes users acount/profile 
   deleteAccount(): void {
     if (confirm('Warning: Your Account will be deleted and all of its data.')) {
       this.router.navigate(['welcome']).then(() => {
         this.snackBar.open(
-          'Account successfully deleted, come back soon!', 'OK',
+          'You have successfully deleted your account!',
+          'OK',
           { duration: 2000 }
         );
       });
       this.fetchApiData.deleteUser().subscribe((result) => {
         console.log(result);
-        localStorage.clear;
+        localStorage.clear();
       });
     }
   }
-
 }

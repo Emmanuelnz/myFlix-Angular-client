@@ -3,6 +3,7 @@
 <div class="movieCards"> 
   <div fxLayout="row wrap" fxLayoutGap="15px grid">
     <div
+      class="mcards"
       fxFlex.xs="100%" 
       fxFlex.sm="50%" 
       fxFlex.md="25%"
@@ -11,7 +12,7 @@
     >
       <mat-card>        
         <img mat-card-image src={{movie.ImagePath}} alt= {{movie.Title}}/>
-        <mat-card-title>{{movie.Title}}</mat-card-title>
+        <mat-card-title class="movie-title">{{movie.Title}}</mat-card-title>
         <mat-card-subtitle>Directed by: {{movie.Directors.Name}}</mat-card-subtitle>
           <mat-card-actions>
           <button
@@ -29,21 +30,20 @@
             (click)="openSynopsisDialog(movie.Title, movie.Description)"
           >Synopsis
           </button>
+          <!-- Add & Remove buttons  -->
           <button
             class="favBtn"
             mat-icon-button
             *ngIf="!isFavorite(movie._id)"
             (click)="addFavorite(movie._id)"
-          >
-            <mat-icon>favorite_border</mat-icon>
+          > <mat-icon>favorite_border</mat-icon>
           </button>
           <button
             class="favBtn"
             mat-icon-button
             *ngIf="isFavorite(movie._id)"
             (click)="removeFavorite(movie._id)"
-          >
-            <mat-icon>favorite</mat-icon>
+          > <mat-icon>favorite</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>

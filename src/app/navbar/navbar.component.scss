@@ -1,14 +1,10 @@
 $cardColor: #111213;
 $textColor: #fff;
 
-button {
-  color: $textColor;
-}
-
 .nav-bar {
   background-color: #1b1f23;
   border: 2px $cardColor solid;
-  padding: 5px;
+  padding: 20px 5px;
   display: flex;
   width: 100%;
   position: sticky;
@@ -16,12 +12,25 @@ button {
   z-index: 1;
 }
 
+.title {
+  color: $textColor;
+  letter-spacing: 2px;
+  border: 2px solid $textColor;
+  margin-right: 15px;
+}
+
+button {
+  color: $textColor;
+  font-size: large;
+  margin-right: 10px;
+}
+
 .logoutBtn {
   position: absolute;
   right: 10px;
 }
 
-.homeIcon {
-  margin-top: -8px;
+.icon {
+  margin-top: -5px;
   margin-right: 2px;
 }
